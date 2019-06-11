@@ -13,6 +13,7 @@
 		3BD4106721036077004BF427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BD4106621036077004BF427 /* Assets.xcassets */; };
 		3BD4106A21036077004BF427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD4106821036077004BF427 /* LaunchScreen.storyboard */; };
 		3BD41074210360E9004BF427 /* YLZMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD41073210360E9004BF427 /* YLZMetalView.swift */; };
+		E0A7540022AFA40300C8E022 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = E0A753FF22AFA40300C8E022 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		3BD4106921036077004BF427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BD4106B21036077004BF427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BD41073210360E9004BF427 /* YLZMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLZMetalView.swift; sourceTree = "<group>"; };
+		E0A753FE22AE5CFF00C8E022 /* YLZShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YLZShaderTypes.h; path = ../../YLZShaderTypes.h; sourceTree = "<group>"; };
+		E0A753FF22AFA40300C8E022 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; name = Shaders.metal; path = ../../Shaders.metal; sourceTree = "<group>"; };
+		E0A7540122AFA91F00C8E022 /* MetalDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetalDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				3BD41073210360E9004BF427 /* YLZMetalView.swift */,
+				E0A753FE22AE5CFF00C8E022 /* YLZShaderTypes.h */,
+				E0A753FF22AFA40300C8E022 /* Shaders.metal */,
+				E0A7540122AFA91F00C8E022 /* MetalDemo-Bridging-Header.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 				TargetAttributes = {
 					3BD4105B21036077004BF427 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -155,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A7540022AFA40300C8E022 /* Shaders.metal in Sources */,
 				3BD4106221036077004BF427 /* ViewController.swift in Sources */,
 				3BD4106021036077004BF427 /* AppDelegate.swift in Sources */,
 				3BD41074210360E9004BF427 /* YLZMetalView.swift in Sources */,
@@ -294,12 +303,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9M58D95D36;
 				INFOPLIST_FILE = MetalDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Colin.MetalDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MetalDemo/Metal/View/MetalDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -309,12 +322,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9M58D95D36;
 				INFOPLIST_FILE = MetalDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Colin.MetalDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MetalDemo/Metal/View/MetalDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
